@@ -1,0 +1,370 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TRAVEL.ECO - Đăng nhập</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:
+        radial-gradient(circle at 0% 100%, #f8c4ac, transparent 35%),
+        radial-gradient(circle at 100% 0%, #f8d4c6, transparent 25%),
+        #fafafa;
+}
+
+.container {
+    width: 100%;
+    max-width: 1280px;
+    min-height: 800px;
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 70px;
+    padding: 32px;
+}
+
+.left-panel {
+    position: relative;
+    border-radius: 32px;
+    overflow: hidden;
+    background-image:
+        linear-gradient(to bottom, transparent 35%,
+        rgba(255,116,48,.35) 58%, #ff803e 85%, #8db2c6 100%),
+        url('https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200');
+    background-size: cover;
+    background-position: center;
+}
+
+.logo {
+    position: absolute;
+    top: 58px;
+    left: 60px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #ff7537;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.logo-icon {
+    font-size: 34px;
+}
+
+.arrow {
+    position: absolute;
+    bottom: 75px;
+    left: 115px;
+    color: #ff7537;
+    font-size: 30px;
+}
+
+.right-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 54px;
+}
+
+.header h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #ff793c;
+    white-space: nowrap;
+}
+
+.header p {
+    font-size: 25px;
+    font-weight: 300;
+    margin-top: 6px;
+}
+
+.login-form {
+    width: 100%;
+    max-width: 394px;
+}
+
+.form-group {
+    margin-bottom: 28px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.required {
+    color: #ff443b;
+}
+
+.input-box {
+    position: relative;
+}
+
+.input-box input {
+    width: 100%;
+    height: 57px;
+    padding: 0 20px;
+    border: 1px solid #888;
+    border-radius: 14px;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+}
+
+.input-box input:focus {
+    border-color: #ff793c;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 22px;
+    color: #777;
+}
+
+.forgot {
+    display: block;
+    text-align: right;
+    margin-top: -5px;
+    margin-bottom: 30px;
+    color: #888;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.forgot:hover {
+    color: #ff793c;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.btn {
+    width: 157px;
+    height: 53px;
+    border: none;
+    border-radius: 15px;
+    background: #ff793c;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: #ed6228;
+    transform: translateY(-2px);
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 42px 0 28px;
+    color: #888;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+    background: #999;
+}
+
+.google-btn {
+    width: 114px;
+    height: 57px;
+    border: 1px solid #888;
+    border-radius: 15px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    cursor: pointer;
+}
+
+.google-btn img {
+    width: 35px;
+    height: 35px;
+}
+
+@media(max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .left-panel {
+        min-height: 300px;
+    }
+
+    .right-panel {
+        padding: 30px 15px;
+    }
+
+    .header h1 {
+        font-size: 36px;
+    }
+
+    .header p {
+        font-size: 20px;
+    }
+}
+
+@media(max-width: 480px) {
+    .left-panel {
+        min-height: 200px;
+    }
+
+    .logo {
+        top: 25px;
+        left: 25px;
+        font-size: 16px;
+    }
+
+    .header h1 {
+        font-size: 27px;
+    }
+
+    .header p {
+        font-size: 17px;
+    }
+
+    .buttons {
+        gap: 12px;
+    }
+
+    .btn {
+        width: 50%;
+    }
+
+    .form-group label {
+        font-size: 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="left-panel">
+        <div class="logo">
+            <span class="logo-icon">⬡</span>
+            <span>TRAVEL.ECO</span>
+        </div>
+        <div class="arrow">↗</div>
+    </div>
+
+    <div class="right-panel">
+
+        <div class="header">
+            <h1>Du lịch toàn quốc</h1>
+            <p>Trung tâm nhận thưởng</p>
+        </div>
+
+        <form class="login-form" id="loginForm">
+
+            <div class="form-group">
+                <label>Số điện thoại hoặc email <span class="required">(*)</span></label>
+                <div class="input-box">
+                    <input type="text" id="email"
+                    placeholder="Số điện thoại hoặc email" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Mật khẩu <span class="required">(*)</span></label>
+                <div class="input-box">
+                    <input type="password" id="password"
+                    placeholder="Nhập mật khẩu" required>
+                    <span class="toggle-password"
+                    onclick="togglePassword()" id="eye">👁</span>
+                </div>
+            </div>
+
+            <a href="#" class="forgot"
+            onclick="alert('Chức năng quên mật khẩu đang được phát triển'); return false;">
+                Forgot Password?
+            </a>
+
+            <div class="buttons">
+                <button type="button" class="btn"
+                onclick="location.href='register.html'">
+                    Đăng kí ngay
+                </button>
+
+                <button type="submit" class="btn">
+                    Đăng nhập
+                </button>
+            </div>
+
+            <div class="divider">or continue with</div>
+
+            <button type="button" class="google-btn"
+            onclick="alert('Cần tích hợp Google Authentication')">
+                <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google">
+            </button>
+
+        </form>
+    </div>
+</div>
+
+<script>
+function togglePassword() {
+    const password = document.getElementById("password");
+    password.type = password.type === "password" ? "text" : "password";
+}
+
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+
+    if (!email || !password) {
+        alert("Vui lòng nhập đầy đủ thông tin!");
+        return;
+    }
+
+    // Chuyển trang demo
+    location.href = "home.html";
+});
+</script>
+
+</body>
+</html>
